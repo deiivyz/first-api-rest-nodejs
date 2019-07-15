@@ -2,7 +2,13 @@
  
 // Cargamos el modelo para usarlo posteriormente
 var Nota = require('../models/nota');
- 
+
+function pruebas(req, res){
+    return res.status(200).send({
+        message: 'Ok'
+    });
+}
+
 function saveNota(req, res){
     // Creamos el objeto Nota
     var nota = new Nota();
@@ -122,6 +128,7 @@ function deleteNota(req, res){
 
 // Exportamos las funciones en un objeto json para poder usarlas en otros fuera de este fichero
 module.exports = {
+	pruebas,
     saveNota,
     getNotas,
     getNota,

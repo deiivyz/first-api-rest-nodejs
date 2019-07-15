@@ -7,7 +7,9 @@ var NotaController = require('../controllers/nota');
 
 // Llamamos al router
 var api = express.Router();
- 
+
+api.get('/pruebas', NotaController.pruebas);
+
 // POST para guardar nuevos documentos
 api.post('/nota', NotaController.saveNota);
  
