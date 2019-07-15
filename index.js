@@ -1,23 +1,23 @@
 // Utilizar nuevas funcionalidades del Ecmascript 6
 'use strict'
  
-// Cargamos el módulo de mongoose para poder conectarnos a MongoDB
+// Cargamos el mï¿½dulo de mongoose para poder conectarnos a MongoDB
 const mongoose = require('mongoose');
  
-// Le indicamos a Mongoose que haremos la conexión con Promesas
+// Le indicamos a Mongoose que haremos la conexiï¿½n con Promesas
 mongoose.Promise = global.Promise;
  
-// Cargamos el fichero app.js con la configuración de Express
+// Cargamos el fichero app.js con la configuraciï¿½n de Express
 const app = require('./app');
  
 // Creamos la variable PORT para indicar el puerto en el que va a funcionar el servidor
 const port = 3800;
 
-// Usamos el método connect para conectarnos a nuestra base de datos
-mongoose.connect('mongodb://localhost:27017/first_database', {useNewUrlParser: true})
+// Usamos el mï¿½todo connect para conectarnos a nuestra base de datos
+mongoose.connect('mongodb://david:1sSXzbs5gD4xESXJ@primercluster-shard-00-00-j1rcz.mongodb.net:27017,primercluster-shard-00-01-j1rcz.mongodb.net:27017,primercluster-shard-00-02-j1rcz.mongodb.net:27017/test?ssl=true&replicaSet=PrimerCluster-shard-0&authSource=admin&retryWrites=true&w=majority', {useNewUrlParser: true})
         .then(() => {
-            // Cuando se realiza la conexión, lanzamos este mensaje por consola
-            console.log('La conexión a MongoDB se ha realizado correctamente!!');
+            // Cuando se realiza la conexiï¿½n, lanzamos este mensaje por consola
+            console.log('La conexiï¿½n a MongoDB se ha realizado correctamente!!');
  
             // CREAR EL SERVIDOR WEB CON NODEJS
             app.listen(port, () => {
