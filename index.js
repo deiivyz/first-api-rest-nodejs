@@ -11,17 +11,17 @@ mongoose.Promise = global.Promise;
 const app = require('./app');
  
 // Creamos la variable PORT para indicar el puerto en el que va a funcionar el servidor
-const port = 3800;
+const port = process.env.PORT || 3800;
 
 // Usamos el m�todo connect para conectarnos a nuestra base de datos
 mongoose.connect('mongodb://david:1sSXzbs5gD4xESXJ@primercluster-shard-00-00-j1rcz.mongodb.net:27017,primercluster-shard-00-01-j1rcz.mongodb.net:27017,primercluster-shard-00-02-j1rcz.mongodb.net:27017/test?ssl=true&replicaSet=PrimerCluster-shard-0&authSource=admin&retryWrites=true&w=majority', {useNewUrlParser: true})
         .then(() => {
             // Cuando se realiza la conexi�n, lanzamos este mensaje por consola
-            console.log('La conexi�n a MongoDB se ha realizado correctamente!!');
+            console.log('La conexión a MongoDB se ha realizado correctamente!!');
  
             // CREAR EL SERVIDOR WEB CON NODEJS
             app.listen(port, () => {
-                console.log('El servidor esta corriendo en localhost:3800');
+                console.log('El servidor esta corriendo en');
             });
         })
         .catch(err => console.log(err));
